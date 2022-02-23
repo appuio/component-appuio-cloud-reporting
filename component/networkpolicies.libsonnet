@@ -7,14 +7,14 @@ local inv = kap.inventory();
 local params = inv.parameters.appuio_cloud_reporting;
 
 local netPol = function(targetNS)
-  kube._Object('networking.k8s.io/v1', 'NetworkPolicy', 'allow-from-%s' % params.namespace) {
+  kube.NetworkPolicy('allow-from-%s' % params.namespace) {
     metadata+: {
       labels+: common.Labels,
       namespace: targetNS,
     },
-    spec: {
-      ingress: [
-        {
+    spec+: {
+      ingress_: {
+        allowFromReportNs: {
           from: [
             {
               namespaceSelector: {
@@ -25,9 +25,7 @@ local netPol = function(targetNS)
             },
           ],
         },
-      ],
-      podSelector: {},
-      policyTypes: [ 'Ingress' ],
+      },
     },
   };
 

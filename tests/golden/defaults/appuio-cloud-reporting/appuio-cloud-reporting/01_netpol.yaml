@@ -10,6 +10,7 @@ metadata:
   name: allow-from-appuio-cloud-reporting
   namespace: appuio-reporting
 spec:
+  egress: []
   ingress:
     - from:
         - namespaceSelector:
@@ -31,6 +32,7 @@ metadata:
   name: allow-from-appuio-cloud-reporting
   namespace: appuio-thanos
 spec:
+  egress: []
   ingress:
     - from:
         - namespaceSelector:

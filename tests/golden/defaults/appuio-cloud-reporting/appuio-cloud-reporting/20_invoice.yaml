@@ -51,7 +51,7 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       key: url
-                      name: odoo-url
+                      name: erp-url
               image: ghcr.io/vshn/appuio-odoo-adapter:v1.0.3
               name: invoice
               resources: {}
@@ -97,7 +97,7 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       key: url
-                      name: odoo-url
+                      name: erp-url
               image: ghcr.io/vshn/appuio-odoo-adapter:v1.0.3
               name: sync-categories
             - args:

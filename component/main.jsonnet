@@ -19,6 +19,7 @@ local escape = function(str)
            ));
 
 local dbSecret = kube.Secret('reporting-db') {
+  assert params.database.password != null : 'database.password must be set.',
   metadata+: {
     namespace: params.namespace,
     labels+: common.Labels,
@@ -30,6 +31,7 @@ local dbSecret = kube.Secret('reporting-db') {
 };
 
 local promURLSecret = kube.Secret('prom-url') {
+  assert params.prometheus.url != null : 'prometheus.url must be set.',
   metadata+: {
     namespace: params.namespace,
     labels+: common.Labels,
@@ -39,7 +41,8 @@ local promURLSecret = kube.Secret('prom-url') {
   },
 };
 
-local erpURLSecret = kube.Secret('odoo-url') {
+local erpURLSecret = kube.Secret('erp-url') {
+  assert params.database.password != null : 'erp_adapter.url must be set.',
   metadata+: {
     namespace: params.namespace,
     labels+: common.Labels,

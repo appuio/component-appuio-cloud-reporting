@@ -1,6 +1,15 @@
 parameters:
   appuio_cloud_reporting:
 
+    database:
+      password: letmein
+
+    prometheus:
+      url: http://metrics
+
+    erp_adapter:
+      url: http://enterprisey-enterprise
+
     network_policies:
       target_namespaces:
         appuio-reporting: true

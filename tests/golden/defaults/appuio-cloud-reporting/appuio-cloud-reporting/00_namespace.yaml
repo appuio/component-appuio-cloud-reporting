@@ -3,9 +3,9 @@ kind: Namespace
 metadata:
   annotations: {}
   labels:
-    SYNMonitoring: main
     app.kubernetes.io/managed-by: commodore
     app.kubernetes.io/name: appuio-cloud-reporting
     app.kubernetes.io/part-of: syn
     name: appuio-cloud-reporting
+    openshift.io/cluster-monitoring: 'true'
   name: appuio-cloud-reporting

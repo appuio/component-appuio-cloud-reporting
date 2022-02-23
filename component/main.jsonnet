@@ -8,16 +8,6 @@ local inv = kap.inventory();
 // The hiera parameters for the component
 local params = inv.parameters.appuio_cloud_reporting;
 
-local monitoringLabel =
-  if std.startsWith(inv.parameters.facts.distribution, 'openshift') then
-    {
-      'openshift.io/cluster-monitoring': 'true',
-    }
-  else
-    {
-      SYNMonitoring: 'main',
-    };
-
 local formatImage = function(ref) '%(registry)s/%(repository)s:%(tag)s' % ref;
 
 local escape = function(str)
@@ -190,7 +180,11 @@ local invoiceCJ = common.CronJob('generate-invoices', params.schedules.invoice, 
 // Define outputs below
 {
   '00_namespace': kube.Namespace(params.namespace) {
-    metadata+: { labels+: common.Labels + monitoringLabel },
+    metadata+: {
+      labels+: common.Labels {
+        'openshift.io/cluster-monitoring': 'true',
+      },
+    },
   },
   '01_netpol': netPol.Policies,
   '10_db_secret': dbSecret,

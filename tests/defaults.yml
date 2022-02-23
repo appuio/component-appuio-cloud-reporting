@@ -1,3 +1,7 @@
-# Overwrite parameters here
+parameters:
+  appuio_cloud_reporting:
 
-# parameters: {...}
+    network_policies:
+      target_namespaces:
+        appuio-reporting: true
+        appuio-thanos: true

@@ -15,20 +15,7 @@ The namespace in which to deploy this component.
 
 [horizontal]
 type:: dictionary
-default::
-+
-[source,yaml]
-----
-reporting:
-  registry: ghcr.io
-  repository: appuio/appuio-cloud-reporting
-  tag: ...
-
-erp_adapter:
-  registry: ghcr.io
-  repository: vshn/appuio-odoo-adapter
-  tag: ...
-----
+default:: https://github.com/appuio/component-appuio-cloud-reporting/blob/master/class/defaults.yml[See `class/defaults.yml].
 
 Dictionary containing the container images used by this component.
 

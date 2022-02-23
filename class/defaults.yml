@@ -20,12 +20,12 @@ parameters:
       invoice: '0 10 1 * *'
 
     database:
-      host: appuio-cloud-reporting
+      host: null
       port: 5432
       name: appuio-cloud-reporting
       username: appuio-cloud-reporting
       password: null
-      parameters: sslmode=disable
+      parameters: ''
 
     prometheus:
       url: null

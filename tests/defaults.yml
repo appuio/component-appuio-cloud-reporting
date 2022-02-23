@@ -2,6 +2,7 @@ parameters:
   appuio_cloud_reporting:
 
     database:
+      host: db.example.com
       password: letmein
 
     prometheus:

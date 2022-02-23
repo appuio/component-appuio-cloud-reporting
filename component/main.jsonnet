@@ -72,6 +72,7 @@ local dbEnv = [
     },
   },
   {
+    assert params.database.host != null : 'database.host must be set.',
     name: 'ACR_DB_URL',
     value: 'postgres://$(username):$(password)@%(host)s:%(port)s/%(name)s?%(parameters)s' % params.database,
   },

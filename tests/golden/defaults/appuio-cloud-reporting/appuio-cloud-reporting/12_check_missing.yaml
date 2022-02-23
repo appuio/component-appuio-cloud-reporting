@@ -40,7 +40,7 @@ spec:
                       key: username
                       name: reporting-db
                 - name: ACR_DB_URL
-                  value: postgres://$(username):$(password)@appuio-cloud-reporting:5432/appuio-cloud-reporting?sslmode=disable
+                  value: postgres://$(username):$(password)@db.example.com:5432/appuio-cloud-reporting?
                 - name: OA_DB_URL
                   value: $(ACR_DB_URL)
               image: ghcr.io/appuio/appuio-cloud-reporting:v0.4.1
@@ -62,7 +62,7 @@ spec:
                       key: username
                       name: reporting-db
                 - name: ACR_DB_URL
-                  value: postgres://$(username):$(password)@appuio-cloud-reporting:5432/appuio-cloud-reporting?sslmode=disable
+                  value: postgres://$(username):$(password)@db.example.com:5432/appuio-cloud-reporting?
                 - name: OA_DB_URL
                   value: $(ACR_DB_URL)
               image: ghcr.io/appuio/appuio-cloud-reporting:v0.4.1
@@ -81,7 +81,7 @@ spec:
                       key: username
                       name: reporting-db
                 - name: ACR_DB_URL
-                  value: postgres://$(username):$(password)@appuio-cloud-reporting:5432/appuio-cloud-reporting?sslmode=disable
+                  value: postgres://$(username):$(password)@db.example.com:5432/appuio-cloud-reporting?
                 - name: OA_DB_URL
                   value: $(ACR_DB_URL)
                 - name: OA_ODOO_URL

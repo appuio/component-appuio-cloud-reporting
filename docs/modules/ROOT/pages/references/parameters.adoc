@@ -60,12 +60,12 @@ default::
 +
 [source,yaml]
 ----
-host: appuio-cloud-reporting
+host: null
 port: 5432
 name: appuio-cloud-reporting
 username: appuio-cloud-reporting
 password: null
-parameters: sslmode=disable
+parameters: ''
 ----
 
 Dictionary managing the connection to the reporting database.

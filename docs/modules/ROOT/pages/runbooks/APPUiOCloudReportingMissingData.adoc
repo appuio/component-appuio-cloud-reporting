@@ -38,7 +38,7 @@ include::partial$runbooks/find_check_logs.adoc[]
 
 === Inconsistent data
 
-Inconsistent fact entries can be caused by changes to the `during` time ranges of the corresponding dimension after facts where already created.
+Inconsistent fact entries can be caused by changes to the `during` time ranges of the corresponding dimension after facts were already created.
 The entries should be deleted and re-created.
 
 1. Connect to the database

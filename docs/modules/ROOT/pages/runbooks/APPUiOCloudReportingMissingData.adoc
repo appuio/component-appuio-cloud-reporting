@@ -114,7 +114,7 @@ UPDATE tenants set target = <ID from ERP> where id = <UUID from pod log>
 [source,bash]
 ----
 name="check-missing-manual-$($(command -v gdate || command -v date) +%s)"
-kubectl --as cluster-admin -n appuio-cloud-reporting create job --from=cronjob/check-missing "${name}"
+kubectl --as=system:admin -n appuio-cloud-reporting create job --from=cronjob/check-missing "${name}"
 kubectl -n appuio-cloud-reporting logs "job/${name}"
 ----
 +
